@@ -13,7 +13,7 @@ num_stok = st.number_input("Kaç farklı stok uzunluğunuz var?", min_value=1, m
 
 stoklar = []
 for i in range(num_stok):
-    cols = st.columns([3, 1])
+    cols = st.columns([1, 1])
     with cols[0]:
         uzunluk = st.number_input(f"Stok #{i+1} - Uzunluk (metre)", min_value=0.0, step=0.5, format="%.2f", key=f"stok_len_{i}")
     with cols[1]:
@@ -27,7 +27,7 @@ num_siparis = st.number_input("Kaç farklı sipariş uzunluğu var?", min_value=
 
 siparisler = []
 for i in range(num_siparis):
-    cols = st.columns([3, 1])
+    cols = st.columns([1, 1])
     with cols[0]:
         uzunluk = st.number_input(f"Sipariş #{i+1} - Uzunluk (metre)", min_value=0.0, step=0.5, format="%.2f", key=f"sip_len_{i}")
     with cols[1]:
@@ -88,3 +88,4 @@ if st.button("📊 Hesapla"):
         if siparisler:
             st.warning("Bazı siparişler yerleştirilemedi:")
             st.write(siparisler)
+
