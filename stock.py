@@ -13,10 +13,10 @@ num_stok = st.number_input("Kaç farklı stok uzunluğunuz var?", min_value=1, m
 
 stoklar = []
 for i in range(num_stok):
-    col1, col2 = st.columns([2, 1])
-    with col1:
+    cols = st.columns([3, 1])
+    with cols[0]:
         uzunluk = st.number_input(f"Stok #{i+1} - Uzunluk (metre)", min_value=0.0, step=0.5, format="%.2f", key=f"stok_len_{i}")
-    with col2:
+    with cols[1]:
         adet = st.number_input(f"Adet", min_value=0, step=1, key=f"stok_qty_{i}")
     if adet > 0:
         stoklar.append({"length": uzunluk, "qty": adet})
@@ -27,10 +27,10 @@ num_siparis = st.number_input("Kaç farklı sipariş uzunluğu var?", min_value=
 
 siparisler = []
 for i in range(num_siparis):
-    col1, col2 = st.columns([2, 1])
-    with col1:
+    cols = st.columns([3, 1])
+    with cols[0]:
         uzunluk = st.number_input(f"Sipariş #{i+1} - Uzunluk (metre)", min_value=0.0, step=0.5, format="%.2f", key=f"sip_len_{i}")
-    with col2:
+    with cols[1]:
         adet = st.number_input(f"Adet", min_value=0, step=1, key=f"sip_qty_{i}")
     if adet > 0:
         siparisler.extend([round(uzunluk, 2)] * adet)
