@@ -9,7 +9,6 @@ st.markdown("Bu uygulama, stok boylarını en verimli şekilde kullanarak sipari
 
 # --- Stok Girişi ---
 st.subheader("1. Stok Bilgileri")
-cols = st.columns([1, 1])
 num_stok = st.number_input("Kaç farklı stok uzunluğunuz var?", min_value=1, max_value=20, value=3)
 
 stoklar = []
@@ -89,5 +88,6 @@ if st.button("📊 Hesapla"):
         if siparisler:
             st.warning("Bazı siparişler yerleştirilemedi:")
             st.write(siparisler)
+
 
 
