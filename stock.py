@@ -77,9 +77,9 @@ if st.button("📊 Hesapla"):
         st.success("Hesaplama tamamlandı!")
 
         df_result = pd.DataFrame([{
-            "Kullanılan Sipariş Kombinasyonu": " x ".join(map(str, r[0])),
-            "Stok Uzunluğu": r[1],
-            "Artan (Fire) Metre": r[2]
+            "Kullanılacak Sipariş Kombinasyonu": " x ".join(map(str, r[0])),
+            "Kullanılacak Stok Uzunluğu (Metre)": r[1],
+            "Fire (Metre)": r[2]
         } for r in results])
 
         st.dataframe(df_result, use_container_width=True)
@@ -88,3 +88,4 @@ if st.button("📊 Hesapla"):
         if siparisler:
             st.warning("Bazı siparişler yerleştirilemedi:")
             st.write(siparisler)
+
