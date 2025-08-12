@@ -76,34 +76,14 @@ if st.button("📊 Hesapla"):
 
         st.success("Hesaplama tamamlandı!")
 
-        # --- DataFrame ---
         df_result = pd.DataFrame([{
             "Kullanılan Sipariş Kombinasyonu": " x ".join(map(str, r[0])),
             "Stok Uzunluğu": r[1],
             "Artan (Fire) Metre": r[2]
         } for r in results])
 
-        # --- Stil Uygulama (Başlıklar Koyu ve Belirgin) ---
-        styled_df = df_result.style.set_table_styles(
-            [{
-                'selector': 'th',
-                'props': [
-                    ('font-weight', 'bold'),
-                    ('background-color', '#f0f0f0'),
-                    ('font-size', '14px'),
-                    ('text-align', 'center')
-                ]
-            },
-            {
-                'selector': 'td',
-                'props': [('text-align', 'center')]
-            }]
-        )
-
-        st.dataframe(styled_df, use_container_width=True)
-
-        # Toplam fire
-        st.markdown(f"### ♻️ Toplam Fire: `{round(waste_total, 2)} metre`")
+        st.dataframe(df_result, use_container_width=True)
+        st.markdown(f"### ♻️ Toplam Fire: {round(waste_total, 2)} metre")
 
         if siparisler:
             st.warning("Bazı siparişler yerleştirilemedi:")
