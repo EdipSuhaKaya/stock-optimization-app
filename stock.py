@@ -9,7 +9,7 @@ st.markdown("Bu uygulama, stok boylarını en verimli şekilde kullanarak sipari
 
 # --- Stok Girişi ---
 st.subheader("1. Stok Bilgileri")
-num_stok = st.number_input("Kaç farklı stok uzunluğunuz var?", min_value=1, max_value=20, value=3)
+num_stok = st.number_input("Kaç farklı stok uzunluğunuz var?", min_value=1, max_value=20, value=2)
 
 stoklar = []
 for i in range(num_stok):
@@ -23,7 +23,7 @@ for i in range(num_stok):
 
 # --- Sipariş Girişi ---
 st.subheader("2. Sipariş Bilgileri")
-num_siparis = st.number_input("Kaç farklı sipariş uzunluğu var?", min_value=1, max_value=100, value=5)
+num_siparis = st.number_input("Kaç farklı sipariş uzunluğu var?", min_value=1, max_value=100, value=2)
 
 siparisler = []
 for i in range(num_siparis):
@@ -88,6 +88,7 @@ if st.button("📊 Hesapla"):
         if siparisler:
             st.warning("Bazı siparişler yerleştirilemedi:")
             st.write(siparisler)
+
 
 
 
